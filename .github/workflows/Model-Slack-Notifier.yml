@@ -5,11 +5,10 @@ name: Github-Slack-Integration
 # Controls when the workflow will run
 on:
   push:
+    branches:
+      - 'main'
     paths:
-      - '../data/models.json'
-
-#   # Allows you to run this workflow manually from the Actions tab
-#   workflow_dispatch:
+      - './data/models.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -30,7 +29,7 @@ jobs:
         with:
           # Slack channel id, channel name, or user id to post message.
           # See also: https://api.slack.com/methods/chat.postMessage#channels
-          channel-id: '#models-update'
+          channel-id: 'C03H68Q1B42'
           # For posting a rich message using Block Kit
           payload: |
             {
