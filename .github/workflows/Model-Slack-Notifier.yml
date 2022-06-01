@@ -5,8 +5,6 @@ name: Github-Slack-Integration
 # Controls when the workflow will run
 on: 
    push:
-#       branches:
-#         - 'master'
       paths:
         - 'data/models.json'
 
