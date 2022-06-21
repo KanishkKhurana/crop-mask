@@ -20,7 +20,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
  
       - uses: slackapi/slack-github-action@v1.19.0
-      - uses: technote-space/get-diff-action@v6
+     # - uses: technote-space/get-diff-action@v6
       # Slack send 
       - name: Post to a Slack channel
         id: slack
@@ -28,8 +28,8 @@ jobs:
         with:
           # Slack channel id, channel name, or user id to post message.
           # See also: https://api.slack.com/methods/chat.postMessage#channels
-          FILES: data/models.json
-          FORMAT: json
+         # FILES: data/models.json
+         # FORMAT: json
           channel-id: 'C03H68Q1B42'
           # For posting a rich message using Block Kit
           payload: |
@@ -40,7 +40,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "New Model Added: \n${{env.GIT_DIFF}} \n${{ github.event.pull_request.html_url || github.event.head_commit.url }} \nCommit Message: ${{github.event.head_commit.message}}"
+                    "text": "New Model Added: \n \n${{ github.event.pull_request.html_url || github.event.head_commit.url }} \nCommit Message: ${{github.event.head_commit.message}}"
                   }
                 }
               ]
