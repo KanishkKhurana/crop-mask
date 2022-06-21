@@ -20,10 +20,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # Slack send 
       
-      
+      - uses: technote-space/get-diff-action@v6
       - name: Post to a Slack channel
         id: slack
-      - uses: technote-space/get-diff-action@v6
+      
       - uses: slackapi/slack-github-action@v1.19.0
         
         with:
