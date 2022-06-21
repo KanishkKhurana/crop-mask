@@ -166,7 +166,7 @@
             "f1_score": 0.5139,
             "precision_score": 0.4405,
             "recall_score": 0.6167,
-            "roc_auc_score": 0.8478
+            "roc_auc_score": 0.8477
         }
     }
 }
