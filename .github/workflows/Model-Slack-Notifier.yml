@@ -31,8 +31,10 @@ jobs:
           # See also: https://api.slack.com/methods/chat.postMessage#channels
           FILES: data/models.json
           FORMAT: json
-          run: yarn lint
-          if: env.GIT_DIFF
+          run: |
+            yarn install
+            yarn esLint ${{ steps.git-diff.outputs.diff }}
+          if: steps.git-diff.outputs.diff
           channel-id: 'C03H68Q1B42'
           # For posting a rich message using Block Kit
           payload: |
@@ -48,6 +50,7 @@ jobs:
                 }
               ]
             }
+       
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           
