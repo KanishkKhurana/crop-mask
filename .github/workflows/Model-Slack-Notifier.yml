@@ -21,8 +21,8 @@ jobs:
       # Slack send 
       
       - uses: technote-space/get-diff-action@v6
-      - name: Post to a Slack channel
-        id: slack
+     # - name: Post to a Slack channel
+      #  id: slack
       
       - uses: slackapi/slack-github-action@v1.19.0
         
